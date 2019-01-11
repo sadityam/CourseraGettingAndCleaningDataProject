@@ -59,7 +59,5 @@ completeDatamean <- completeData %>%
   group_by(subject, activity) %>%
   summarise_all(funs(mean))
 
-# completeData.melted <- melt(completeData, id = c("subject", "activity"))
-# completeData.mean <- dcast(completeData.melted, subject + activity ~ variable, mean)
-
+#Write tidy data
 write.table(completeDatamean, "tidy.txt", row.names = FALSE, quote = FALSE)
